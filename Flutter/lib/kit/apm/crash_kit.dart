@@ -153,8 +153,7 @@ class LogPageState extends State<LogPage> {
             Row(
               children: <Widget>[
                 Expanded(
-                    child: FlatButton(
-                        color: Colors.white,
+                    child: TextButton(
                         onPressed: () {},
                         child: Text('检测开关',
                             style: TextStyle(
@@ -173,8 +172,7 @@ class LogPageState extends State<LogPage> {
                   },
                 ),
                 Expanded(
-                    child: FlatButton(
-                  color: Colors.white,
+                    child: TextButton(
                   onPressed: () {
                     FileUtil.shared.deleteFile('carshDoc');
                     var kit =

@@ -30,6 +30,12 @@ class DoKitHttpClient implements HttpClient {
   HttpInfo? httpInfo;
 
   @override
+  Function(String line)? keyLog;
+
+  @override
+  Future<ConnectionTask<Socket>> Function(Uri url, String? proxyHost, int? proxyPort)? connectionFactory;
+
+  @override
   set autoUncompress(bool value) => origin.autoUncompress = value;
 
   @override
@@ -196,6 +202,12 @@ class DoKitHttpClientRequest implements HttpClientRequest {
 
   final HttpClientRequest origin;
   final HttpInfo? httpInfo;
+
+  @override
+  Future<ConnectionTask<Socket>> Function(Uri url, String? proxyHost, int? proxyPort)? connectionFactory;
+
+  @override
+  Function(String line)? keyLog;
 
   @override
   bool get bufferOutput => origin.bufferOutput;
